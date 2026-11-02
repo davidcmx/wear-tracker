@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineAsyncComponent } from 'vue'
+import { ref, defineAsyncComponent, watch, onMounted } from 'vue'
 import { Sun, Moon, Calendar, Grid, Tag, SunMedium } from 'lucide-vue-next'
 
 const views = {
@@ -10,21 +10,33 @@ const views = {
 }
 
 const tabActual = ref('hoy')
-const isDark = ref(false)
+
+// Inicializar leyendo de localStorage (por defecto true/oscuro si no hay nada guardado)
+const savedTheme = localStorage.getItem('wt2_dark_mode')
+const isDark = ref(savedTheme !== null ? JSON.parse(savedTheme) : true)
+
+const aplicarTema = (dark) => {
+    document.documentElement.classList.toggle('dark', dark)
+    localStorage.setItem('wt2_dark_mode', JSON.stringify(dark))
+}
+
+// Aplicar al montar y escuchar cambios
+onMounted(() => {
+    aplicarTema(isDark.value)
+})
 
 const toggleDark = () => {
     isDark.value = !isDark.value
-    document.documentElement.classList.toggle('dark', isDark.value)
+    aplicarTema(isDark.value)
 }
 
-// Fecha actual visual para la cabecera
 const fechaHoyVisual = new Date().toLocaleDateString('es-MX', { weekday: 'short', month: 'short', day: 'numeric' })
 </script>
 
 <template>
   <div class="max-w-md mx-auto h-[100dvh] bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 shadow-2xl flex flex-col relative overflow-hidden transition-colors duration-300">
     
-    <!-- Header con fuente estilizada y fecha actual -->
+    <!-- Header -->
     <header class="bg-slate-900 dark:bg-slate-900 text-white p-5 shadow-md z-10 flex justify-between items-center shrink-0">
         <div>
             <h1 class="text-2xl font-brand font-extrabold tracking-wider bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent">

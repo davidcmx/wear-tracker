@@ -13,6 +13,14 @@
         font-family: 'Outfit', sans-serif;
       }
     </style>
+    <!-- Script inline preventivo para cargar en oscuro por defecto sin destellos -->
+    <script>
+      const saved = localStorage.getItem('wt2_dark_mode');
+      const isDark = saved !== null ? JSON.parse(saved) : true;
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-200 overscroll-none transition-colors duration-300">
     <div id="app"></div>
