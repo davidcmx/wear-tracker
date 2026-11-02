@@ -1,0 +1,11 @@
+import{c,q as i,s as o}from"./index-Cemvv_vU.js";/**
+ * @license lucide-vue-next v0.368.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const s=c("PlusIcon",[["path",{d:"M5 12h14",key:"1ays0h"}],["path",{d:"M12 5v14",key:"s699le"}]]);/**
+ * @license lucide-vue-next v0.368.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const m=c("Trash2Icon",[["path",{d:"M3 6h18",key:"d0wm0j"}],["path",{d:"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6",key:"4alrt4"}],["path",{d:"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2",key:"v07s0e"}],["line",{x1:"10",x2:"10",y1:"11",y2:"17",key:"1uufr5"}],["line",{x1:"14",x2:"14",y1:"11",y2:"17",key:"xtxkd"}]]),a=(r,n)=>{const t=localStorage.getItem(r);return t?JSON.parse(t):n},e=i({macroCategorias:[{id:"sup",nombre:"Superior (Torso)",color:"#3b82f6"},{id:"inf",nombre:"Inferior (Piernas)",color:"#f97316"},{id:"cal",nombre:"Calzado",color:"#eab308"},{id:"int",nombre:"Ropa Interior",color:"#8b5cf6"},{id:"ext",nombre:"Abrigos / Exterior",color:"#64748b"}],categorias:a("wt2_categorias",[{id:crypto.randomUUID(),macro_id:"sup",nombre:"Playera",concatenar:!0},{id:crypto.randomUUID(),macro_id:"sup",nombre:"Camisa",concatenar:!0},{id:crypto.randomUUID(),macro_id:"inf",nombre:"Jeans",concatenar:!0},{id:crypto.randomUUID(),macro_id:"inf",nombre:"Joggers",concatenar:!0},{id:crypto.randomUUID(),macro_id:"inf",nombre:"Shorts",concatenar:!0},{id:crypto.randomUUID(),macro_id:"int",nombre:"Boxers",concatenar:!0},{id:crypto.randomUUID(),macro_id:"int",nombre:"Calcetines",concatenar:!0},{id:crypto.randomUUID(),macro_id:"cal",nombre:"Tenis",concatenar:!0},{id:crypto.randomUUID(),macro_id:"cal",nombre:"Zapatos",concatenar:!0},{id:crypto.randomUUID(),macro_id:"ext",nombre:"Chamarra",concatenar:!0}]),prendas:a("wt2_prendas",[]),bitacora:a("wt2_bitacora",[])});o(()=>e.categorias,r=>localStorage.setItem("wt2_categorias",JSON.stringify(r)),{deep:!0});o(()=>e.prendas,r=>localStorage.setItem("wt2_prendas",JSON.stringify(r)),{deep:!0});o(()=>e.bitacora,r=>localStorage.setItem("wt2_bitacora",JSON.stringify(r)),{deep:!0});export{s as P,m as T,e as s};
